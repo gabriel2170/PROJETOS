@@ -1,7 +1,7 @@
 from pycep_correios import get_address_from_cep, WebService, exceptions
 
 
-#cep = input("Seu CEP: ")
+cep = input("Seu CEP: ")
 
 
 try:

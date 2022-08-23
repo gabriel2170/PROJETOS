@@ -5,7 +5,7 @@ cep = input("Seu CEP: ")
 
 
 try:
-    endereco = get_address_from_cep('14400740', webservice=WebService.APICEP)
+    endereco = get_address_from_cep(cep, webservice=WebService.APICEP)
 
     print(endereco)
     print(endereco['bairro'])

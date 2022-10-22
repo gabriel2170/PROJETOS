@@ -1,0 +1,44 @@
+body{
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: white
+}
+input:hover{
+    transition: 0.5s;
+    border-radius: 15px;
+}
+.box_login{
+    transition: 0.5s;
+    margin-top: 10%;
+    background-color: rgb(124, 33, 33);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    width: 400px;
+}
+.box_login:hover{
+    transition: 0.5s;
+    border-radius: 15px;
+    background-color: rgb(122, 45, 122);   
+}
+
+.box_login input{
+    padding: 5%;
+}
+
+#submit{
+    transition: 0.5s;
+    height: 70px;
+    width: 200px;
+}
+#submit:hover{
+    transition: 0.5s;
+    border-radius: 15px;
+}

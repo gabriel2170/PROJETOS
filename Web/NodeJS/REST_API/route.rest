@@ -1,0 +1,12 @@
+### acessando via GET
+GET http://localhost:3000/subscribers
+
+### acessando via POST
+
+POST http://localhost:3000/subscribers
+
+Content-Type: application/json
+{
+    "userName": "Gabriel",
+    "userChannel": "Subscriber_Site"
+}

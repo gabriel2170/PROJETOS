@@ -1,0 +1,178 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.link {
+    transition: 1s;
+    padding: 10px;
+}
+
+.link a {
+    transition: 1s;
+}
+
+.link:hover {
+    transition: 1s;
+    background-color: rgb(58, 57, 57);
+    color: rgb(218, 214, 214);
+    border-radius: 35px;
+}
+
+.link a:hover {
+    color: rgb(221, 218, 218);
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+body {
+    background-image: url('fundo.jpg');
+    background-repeat: cover;
+    background-size: 1950px;
+}
+
+header {
+    transition: 1s;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    border-radius: 35px;
+    opacity: 75%;
+}
+
+header:hover {
+    opacity: 100%;
+}
+
+header ul li:hover {
+    transition: 1s;
+    background-color: rgb(68, 68, 68);
+    color: rgb(155, 155, 155);
+    border-radius: 35px;
+    cursor: pointer;
+    font-style: none;
+}
+
+header ul li span:hover {
+    transition: 1s;
+    color: rgb(226, 226, 226);
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    font-size: 30px;
+}
+
+header ul li {
+    height: 40px;
+    padding-left: 5vh;
+    padding-right: 5vh;
+
+}
+
+main .grid {
+    transition: 1s;
+    display: flex;
+    margin-top: 15vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 35px;
+
+}
+
+
+main .grid .aba {
+    transition: 1s;
+    height: 25vh;
+    width: 25vh;
+    margin-bottom: 25px;
+    background-color: gray;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 75%;
+}
+
+main .grid .aba img {
+    transition: 1s;
+    height: 25vh;
+    width: 25vh;
+    border-radius: 35px;
+}
+
+main .grid .aba img:hover {
+    transition: 1s;
+    height: 30vh;
+    width: 30vh;
+    border-radius: 35px;
+}
+
+
+main .grid .aba:hover {
+    transition: 1s;
+    cursor: pointer;
+    height: 30vh;
+    width: 30vh;
+    opacity: 100%;
+}
+
+.base {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil {
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+    height: 80%;
+    width: 100%;
+    background-color: rgb(94, 92, 92);
+    border-radius: 35px;
+    opacity: 80%;
+    padding: 15px;
+}
+
+.perfil:hover {
+    background-color: rgb(51, 49, 49);
+    opacity: 95%;
+}
+
+.perfil img {
+    border-radius: 35px;
+}
+
+
+
+.perfil p {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: antiquewhite;
+}
+
+.base2 {
+    margin-top: 2vh;
+    height: 35vh;
+    width: 100%;
+    background-color: rgb(94, 92, 92);
+    border-radius: 35px;
+    opacity: 80%;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

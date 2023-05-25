@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP</title>
+</head>
+<body>
+    <main>
+        <div class="interface">
+            <label>Consulta CEP</label>
+            <input type="text" id="cep" placehoder="000000-000">
+            <div>
+                <button class="buscar" onclick="buscar()">Pesquisar</button>
+                <button class="limpar" onclick="limpar()">Limpar</button>
+            </div>
+            <span class="info"></span>
+            
+        </div>
+
+        <style>
+            body{
+                background-image: linear-gradient(to right, #dafdd5, #0a4202);
+            }
+
+            .base{
+                transition: 1s;
+                text-align: center;
+            }
+            .base:hover{
+                transition: 1s;
+                padding: 15px;
+                background-color: #cecccc85;
+                border-radius: 35px;
+            }
+            .interface{
+                transition: 1s;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 35vh;
+            }
+
+            .interface label{
+                font-size: 40px;         
+            }
+
+            .interface input{
+                transition: 1s;
+                padding: 5px;
+                width: 25vh;
+                font-size: 40px;
+                text-align: center;
+                margin-bottom: 25px;
+                border-radius: 25px;
+                cursor: pointer;
+            }
+
+            .interface input:hover{
+                transition: 1s;
+                padding: 10px;
+                width: 30vh;
+                background-color: rgb(134, 134, 134);
+                color: white;
+            }
+
+            .interface .buscar{
+                transition: 1s;
+                padding: 5px;
+                width: 20vh;
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 25px;
+                border-radius: 25px;
+                cursor: pointer;
+            }
+
+            .interface .limpar{
+                transition: 1s;
+                padding: 5px;
+                width: 20vh;
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 25px;
+                border-radius: 25px;
+                cursor: pointer;
+            }
+
+            .interface .buscar:hover{
+                transition: 1s;
+                padding: 10px;
+                width: 25vh;
+                background-color: rgb(134, 134, 134);
+                color: white;
+            }
+
+            .interface .limpar:hover{
+                transition: 1s;
+                padding: 10px;
+                width: 25vh;
+                background-color: rgb(134, 134, 134);
+                color: white;
+            }
+            .info{
+                transition: 1s;
+                font-size: 35px;
+            }
+        </style>
+    </main>
+
+
+    <script>
+        var cep = document.getElementById('cep')
+        var endereco = document.querySelector('span')
+
+        async function buscar(){
+            try {
+                var dados = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+                var json = await dados.json()
+                
+                if(json.cep == undefined){
+                    endereco.innerHTML = '<div class="base"><br/>CEP não localizado!!</div>'
+                }else{
+                    endereco.innerHTML = '<div class="base">' + '<br/>CEP: ' + json.cep + '<br/>Endereço: ' + json.logradouro + '<br/>Bairro: ' + json.bairro + '<br/>Complemento: ' + json.complemento + '<br/>Cidade: ' + json.localidade + '<br/>UF: ' + json.uf + '</div>'
+                }
+                
+            } catch (error) {
+                endereco.innerHTML = '<div class="base"><br/>CEP não localizado!!</div>'
+            }
+            
+        }
+
+        function limpar(){
+            cep.value = ''
+            endereco.innerHTML = ''
+        }
+        
+        
+    </script>
+</body>
+</html>

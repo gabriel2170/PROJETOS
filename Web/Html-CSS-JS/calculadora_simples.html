@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+
+    <style>
+        body{
+            background-image: linear-gradient(to right,rgb(240, 152, 152) , #2c0000);
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .tela{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+        }
+
+        .tela input{
+            transition: 1s;
+            width: 50px;
+            padding: 20px;
+            border-radius: 25px;
+            text-align: center;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        .tela input:hover{
+            transition: 1s;
+            width: 55px;
+            padding: 25px;
+            background-color: rgb(126, 122, 122);
+            color: white;
+            cursor: pointer;
+        }
+        .tela div{
+            width: 15%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .oper{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5vh;
+            text-align: center;
+        }
+        .oper button{
+            transition: 1s;
+            height: 50px;
+            width: 50px;
+            font-size: 35px;
+            border-radius: 25px;
+            margin-left: 55px;
+        }
+
+        .oper button:hover{
+            transition: 1s;
+            height: 55px;
+            width: 55px;
+            background-color: rgb(131, 131, 131);
+            color: white;
+            cursor: pointer;
+        }
+
+        #equal{
+            font-size: 35px;
+            margin-left: 15px;
+            margin-right: 15px;
+            color: white;
+        }
+
+      
+        #result{
+            transition: 1s;
+            font-size: 35px;
+            color: white
+        }
+
+        #result:hover{
+            transition: 1s;
+            background-color: #85818185;
+            border-radius: 35px;
+            padding: 15px;
+        }
+        .titulo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35vh;
+        }
+        
+        .titulo label{
+            font-size: 45px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="titulo">
+            <label>Calculadora Simples</label>
+        </div>
+        <div class="tela">
+            
+            <input type="number" id="num1" />
+            <input type="number" id="num2"/>
+            <span id="equal">=</span>
+            <span id="result">0</span>
+        </div>
+    
+        <div class="oper">
+            <button onclick="soma()">+</button>
+            <button onclick="subtracao()">-</button>
+            <button onclick="multiplicacao()">*</button>
+            <button onclick="potenciacao()">**</button>
+            <button onclick="restoDivisao()">%</button>
+            <button onclick="divisao()">/</button>
+            <button onclick="apagar()">C</button>
+        </div>
+    
+    </main>
+    
+
+    <script>
+        var n1 = document.querySelector('#num1');
+        var n2 = document.querySelector('#num2');
+        var result = document.querySelector('#result');
+
+        function soma() {
+            result.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+        }
+        function subtracao() {
+            result.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+        }
+        function multiplicacao() {
+            result.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+        }
+        function potenciacao() {
+            result.innerHTML = parseInt(n1.value) ** parseInt(n2.value)
+        }
+        function restoDivisao() {
+            result.innerHTML = parseInt(n1.value) % parseInt(n2.value)
+        }
+        function divisao() {
+            result.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+        }
+        function apagar(){
+            n1.value = ""
+            n2.value = ""
+            result.innerHTML = 0
+        }
+    </script>
+</body>
+
+</html>

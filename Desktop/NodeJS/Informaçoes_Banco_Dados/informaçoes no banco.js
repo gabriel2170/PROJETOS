@@ -1,6 +1,7 @@
 const mysql = require('mysql')
 const readline = require('readline-sync')
 
+
 class Data {
 
     iniciarBanco() {
@@ -100,14 +101,14 @@ class Data {
                         console.log('Tabela nao existe!!')
                         db.end()
                     } else {
-                        if(res.affectedRows == 0){
+                        if (res.affectedRows == 0) {
                             console.log(`Nao ha dados do usuario ${nome}!!`)
                             db.end()
-                        }else{
+                        } else {
                             console.log(`Dados do Usuario ${nome} foram deletados!!`)
                             db.end()
                         }
-                       
+
                     }
                 })
             }
@@ -132,14 +133,14 @@ class Data {
                         console.log('Tabela nao existe!!')
                         db.end()
                     } else {
-                        if(res.affectedRows == 0){
+                        if (res.affectedRows == 0) {
                             console.log(`Nao ha dados com a idade igual a ${idade} !!`)
                             db.end()
-                        }else{
+                        } else {
                             console.log(`Dados cuja a idade e igual a ${idade} foram deletados!!`)
                             db.end()
                         }
-                        
+
                     }
                 })
             }
@@ -195,9 +196,9 @@ class Data {
                         db.end()
                     } else {
                         res.map((x) => {
-                            console.log(x)
-                            db.end()
+                            console.log(x)                
                         })
+                        db.end()
                     }
                 })
             }
@@ -221,7 +222,7 @@ class Data {
             } else {
                 db.query("SELECT * FROM usuario", (err, res, fields) => {
                     if (err) {
-                        console.log('Nao Ha Bancos para consulta!!')
+                        console.log('Nao Ha Banco Data!!')
                         db.end()
                     } else {
                         console.log(res)
@@ -291,16 +292,26 @@ class Data {
 
 const query = new Data()
 
+
+
+
 var n = parseInt(readline.question('Selecione uma das Opcoes (1-Criar Banco/ 2-Criar Tabela/ 3-Inserir dados/ 4-Deletar Dados/ 5-Consultar Tabelas/ 6-Consultar Dados/ 7-Consultar Bancos/ 8-Deletar Tabela/ 9-Deletar Banco): '))
 
-if (n < 0 || n > 9) {
+
+if (n < 0 || n > 9 || typeof n != 'number') {
     console.log('Opcao Invalida!!')
 }
 
+if (n == 0) {
+    process.kill(0)
+}
+
 if (n == 1) {
+
     query.iniciarBanco()
 
 }
+
 
 if (n == 2) {
     query.criarTabela()
@@ -351,3 +362,5 @@ if (n == 8) {
 if (n == 9) {
     query.deletarBanco()
 }
+
+
